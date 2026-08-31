@@ -1,3 +1,5 @@
+from turtle import color
+
 import streamlit as st
 import pandas as pd
 import joblib
@@ -92,120 +94,184 @@ st.markdown(
         padding-bottom: 40px;
         max-width: 1400px;
     }}
-
-
-    /* ======================================================
-       TITLE
-       ====================================================== */
-
-    .main-title {{
-        color: #064b70;
-        font-size: 42px;
-        font-weight: 800;
-        margin-bottom: 5px;
-    }}
-
-
-    .subtitle {{
-        color: #536b78;
-        font-size: 17px;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }}
-
-
-    /* ======================================================
-       SECTION TITLE
-       ====================================================== */
-
-.subtitle {{
-    color: white;
-    font-size: 17px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}}
-
-
-    /* ======================================================
-       RESULT BOXES
-       ====================================================== */
-
-    .safe-box {{
-        background: rgba(40, 167, 69, 0.15);
-        border: 2px solid rgba(40, 167, 69, 0.6);
-        border-radius: 15px;
-        padding: 20px;
-        text-align: center;
-        margin-top: 15px;
-    }}
-
-
-    .unsafe-box {{
-        background: rgba(220, 53, 69, 0.15);
-        border: 2px solid rgba(220, 53, 69, 0.6);
-        border-radius: 15px;
-        padding: 20px;
-        text-align: center;
-        margin-top: 15px;
-    }}
-
-    /* ======================================================
-   CHANGE ST.INFO()
-   ====================================================== */
-
-div[data-testid="stAlert"] {{
-    background-color: rgba(0, 35, 60, 0.85) !important;
-    border: 2px solid white !important;
-    border-radius: 12px !important;
-}}
-
-/* Text inside st.info */
-div[data-testid="stAlert"] p {{
-    color: white !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-}}
-
-    /* ======================================================
-       RIGHT SIDE
-       ====================================================== */
-
-    .right-title {{
-        color: white;
-        font-size: 42px;
-        font-weight: 800;
-        text-align: center;
-        text-shadow: 0 3px 8px rgba(0,0,0,0.8);
-        margin-top: 120px;
-    }}
-
-
-    .right-text {{
-        color: white;
-        font-size: 18px;
-        text-align: center;
-        text-shadow: 0 3px 8px rgba(0,0,0,0.8);
-    }}
-
-
-    /* ======================================================
-       FOOTER
-       ====================================================== */
-
-    .footer {{
-        color: white;
-        text-align: center;
-        font-size: 14px;
-        margin-top: 30px;
-        text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-    }}
-
-    </style>
     """,
     unsafe_allow_html=True
 )
 
+st.markdown("""
+<style>
 
+/* ======================================================
+   GENERAL TEXT
+   ====================================================== */
+
+body {
+    color: white !important;
+}
+
+.stApp {
+    color: white !important;
+}
+
+.stMarkdown,
+.stMarkdown p,
+.stMarkdown span,
+.stMarkdown div,
+label,
+p,
+span {
+    color: white !important;
+}
+
+
+/* ======================================================
+   TITLE
+   ====================================================== */
+
+.main-title {
+    color: white !important;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+
+/* ======================================================
+   SUBTITLE
+   ====================================================== */
+
+.subtitle {
+    color: white !important;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+/* ======================================================
+   SECTION TITLE
+   ====================================================== */
+
+.section-title {
+    color: white !important;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+/* ======================================================
+   RESULT BOXES
+   ====================================================== */
+
+.safe-box {
+    background: rgba(40, 167, 69, 0.15);
+    border: 2px solid rgba(40, 167, 69, 0.6);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 15px;
+    color: white !important;
+}
+
+.safe-box h1,
+.safe-box h2,
+.safe-box h3,
+.safe-box p,
+.safe-box span,
+.safe-box div {
+    color: white !important;
+}
+
+
+.unsafe-box {
+    background: rgba(220, 53, 69, 0.15);
+    border: 2px solid rgba(220, 53, 69, 0.6);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 15px;
+    color: white !important;
+}
+
+.unsafe-box h1,
+.unsafe-box h2,
+.unsafe-box h3,
+.unsafe-box p,
+.unsafe-box span,
+.unsafe-box div {
+    color: white !important;
+}
+
+
+/* ======================================================
+   ST.INFO
+   ====================================================== */
+
+div[data-testid="stAlert"] {
+    background-color: rgba(0, 35, 60, 0.85) !important;
+    border: 2px solid white !important;
+    border-radius: 12px !important;
+}
+
+div[data-testid="stAlert"] p,
+div[data-testid="stAlert"] span,
+div[data-testid="stAlert"] div {
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
+
+
+/* ======================================================
+   INPUT LABELS
+   ====================================================== */
+
+.stSelectbox label,
+.stNumberInput label,
+.stTextInput label,
+.stSlider label,
+.stRadio label,
+.stCheckbox label {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+
+/* ======================================================
+   RIGHT SIDE
+   ====================================================== */
+
+.right-title {
+    color: white !important;
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.8);
+    margin-top: 120px;
+}
+
+.right-text {
+    color: white !important;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.8);
+}
+
+
+/* ======================================================
+   FOOTER
+   ====================================================== */
+
+.footer {
+    color: white !important;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+</style>
+""", unsafe_allow_html=True)
 # ============================================================
 # CREATE TWO COLUMNS
 # ============================================================
